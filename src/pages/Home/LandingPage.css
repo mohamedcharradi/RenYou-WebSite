@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "AvantGarde";
+  src: url("../../assets/fonts/ITCAvantGarde-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AvantGarde";
+  src: url("../../assets/fonts/ITCAvantGarde-Book.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "AvantGarde", sans-serif;
+  color: white;
+}
+.background-gradient{
+ background: radial-gradient(circle at top left, #6a6fb8, transparent 40%),
+              radial-gradient(circle at bottom right, #f07b4e, transparent 45%),
+              linear-gradient(135deg, #2a1b4f, #1a0b3d);
+  background-blend-mode: screen, normal;
+  overflow: hidden; margin-top: 10px;
+  border-radius: 24px;
+  padding-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  
+}
+/* Hero Section */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.hero-text h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #ff814c;
+}
+
+.hero-text p {
+  margin-top: 20px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.hero-images {
+  display: flex;
+  gap: 20px;
+  background-color: aqua;
+  padding: 200 200px;
+}
+
+.hero-images img {
+  width: 500px;
+  }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .hero-images {
+    justify-content: center;
+
+  }
+}
