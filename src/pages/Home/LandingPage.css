@@ -1,40 +1,45 @@
+/* Import custom fonts */
 @font-face {
-  font-family: "AvantGarde";
-  src: url("../../assets/fonts/ITCAvantGarde-Bold.otf") format("opentype");
+  font-family: 'FontTwo';
+  src: url('../../assets/fonts/ITC Avant Garde Gothic Std Bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "AvantGarde";
-  src: url("../../assets/fonts/ITCAvantGarde-Book.otf") format("opentype");
+  font-family: 'FontThree';
+  src: url('../../assets/fonts/ITC Avant Garde Gothic Std Book.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
+/* Global reset */
 body {
   font-family: "AvantGarde", sans-serif;
   color: white;
+  margin: 0;
+  padding: 0;
 }
-.background-gradient{
- background: radial-gradient(circle at top left, #6a6fb8, transparent 40%),
+
+/* Background gradient */
+.background-gradient {
+  background: radial-gradient(circle at top left, #6a6fb8, transparent 40%),
               radial-gradient(circle at bottom right, #f07b4e, transparent 45%),
               linear-gradient(135deg, #2a1b4f, #1a0b3d);
   background-blend-mode: screen, normal;
-  overflow: hidden; margin-top: 10px;
+  overflow: hidden; 
+  margin-top: 14px;
   border-radius: 24px;
-  padding-top: 30px;
   margin-left: 20px;
   margin-right: 20px;
-  padding-right: 20px;
-  padding-left: 20px;
-  
+  padding: 80px 20px;
 }
+
 /* Hero Section */
 .hero {
-  max-width: 1200px;
+  max-width: 1800px;
   margin: 0 auto;
-  padding: 80px 40px;
+  padding: 100px 20px 20px 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -43,19 +48,18 @@ body {
 }
 
 .hero-text {
-  max-width: 500px;
+  flex: 1 1 500px;
 }
 
 .hero-text h1 {
-  font-size: 42px;
+  font-size: clamp(32px, 5vw, 60px);
   font-weight: bold;
   line-height: 1.2;
 }
 
 .hero-text h2 {
-  font-size: 28px;
+  font-size: clamp(20px, 3vw, 36px);
   font-weight: bold;
-  margin-top: 20px;
   color: #ff814c;
 }
 
@@ -63,47 +67,69 @@ body {
   margin-top: 20px;
   line-height: 1.6;
   color: #ddd;
+  font-family: 'FontThree', sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
 }
 
 .buttons {
   margin-top: 30px;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
+/* Hero Image */
 .hero-images {
+  flex: 1 1 400px;
   display: flex;
-  gap: 20px;
-  background-color: aqua;
-  padding: 200 200px;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-images img {
-  width: 500px;
-  }
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;   /* Keeps proportions */
+  flex-shrink: 0;        /* Prevents squashing */
+}
 
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .nav-links {
-    gap: 15px;
-  }
-
+/* Responsive: tablets */
+@media (max-width: 1024px) {
   .hero {
     flex-direction: column;
     text-align: center;
+    gap: 30px;
   }
 
   .buttons {
     justify-content: center;
   }
+}
+
+/* Responsive: phones */
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+
+  .hero-text h2 {
+    font-size: clamp(18px, 5vw, 26px);
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 
   .hero-images {
+    width: 100%;
     justify-content: center;
+  }
 
+  .hero-images img {
+    max-width: 90%; 
+    max-height: fit-content;  
   }
 }
