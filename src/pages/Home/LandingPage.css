@@ -13,6 +13,7 @@
   font-style: normal;
 }
 
+
 /* Global reset */
 body {
   font-family: "AvantGarde", sans-serif;
@@ -41,7 +42,6 @@ body {
   margin-right: 12px;
   padding: 80px 20px;
   color: white;
-  /* Optional: subtle blur for the image */
   backdrop-filter: blur(4px); 
 }
 
@@ -182,24 +182,29 @@ body {
 /* Experts Section */
 .experts-section {
   padding: 80px 20px;
-  background: #fff;
+  background: #ffffff;
   color: #333;
+  margin-top: 20px;
 }
 
 .experts-container {
-  max-width: 1200px;
+  max-width: 1650px;
   margin: 0 auto;
-    background: #695353;
-
+  display: flex;           
+  flex-wrap: wrap;         
+  gap: 50px;             
+  align-items: center;     
+  justify-content: space-between; 
+  padding: 0px 20px;
 }
 
 .experts-header {
-  text-align: center;
-  margin-bottom: 50px;
+  flex: 1;             
+  text-align: left;  
 }
 
 .experts-header h2 {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(32px, 4vw, 72px);
   font-weight: bold;
   margin-bottom: 16px;
   color: #1F1048;
@@ -207,7 +212,7 @@ body {
 }
 
 .experts-header .subtext {
-  font-size: clamp(18px, 2.5vw, 24px);
+  font-size: clamp(18px, 2.5vw, 32px);
   color: #ff814c;
   margin-bottom: 20px;
   font-family: 'FontTwo', sans-serif;
@@ -215,26 +220,49 @@ body {
 
 .experts-header .description {
   max-width: 700px;
-  margin: 0 auto;
   line-height: 1.6;
-  color: #666;
+  color: #161616;
   font-size: 18px;
   font-family: 'FontThree', sans-serif;
+  margin-bottom: 16px;
 }
 
 /* Vertical Scrolling Gallery */
 .vertical-scrolling-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
   margin-bottom: 50px;
   height: 500px;
   overflow: hidden;
-  background-color: #e36c34;
+  position: relative; 
+  width: 600px;
+}
+
+/* Soft blur edges top & bottom */
+.vertical-scrolling-gallery::before,
+.vertical-scrolling-gallery::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px; /* blur zone */
+  pointer-events: none;
+  z-index: 3;
+}
+
+.vertical-scrolling-gallery::before {
+  top: 0;
+  background: linear-gradient(to bottom, #fff, transparent);
+}
+
+.vertical-scrolling-gallery::after {
+  bottom: 0;
+  background: linear-gradient(to top, #fff, transparent);
 }
 
 .scrolling-column {
   height: 100%;
+  width: 80%;
   overflow: hidden;
   position: relative;
 }
@@ -251,31 +279,22 @@ body {
 }
 
 @keyframes scroll {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
 }
 
 @keyframes scroll-reverse {
-  0% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
 }
 
 .expert-card {
-  border-radius: 16px;
+  border-radius: 22px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   height: 220px;
 }
-
 
 .expert-card img {
   width: 100%;
@@ -290,7 +309,7 @@ body {
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .vertical-scrolling-gallery {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     height: 800px;
   }
 }
@@ -308,5 +327,547 @@ body {
   
   .expert-card {
     height: 200px;
+  }
+}
+/* Doctors Section */
+.doctors-section {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+
+
+}
+
+.doctors-container {
+  margin: 0 auto;
+}
+/* Horizontal Scrolling Gallery */
+.scrolling-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.horizontal-scrolling-gallery {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+  justify-content: center;
+}
+
+
+
+.horizontal-scrolling-gallery::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 4px;
+}
+
+.doctor-card {
+  flex: 0 0 auto;
+  width: 240px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border-radius: 20px; 
+  padding: 10px; 
+}
+
+.doctor-card img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.doctor-info {
+text-align: left;
+font-family: 'FontThree', sans-serif;
+
+}
+
+.doctor-info h3 {
+  font-family: 'FontTwo', sans-serif;
+  font-size: 16px;
+  color: #1F1048;
+  text-align: left;
+}
+
+.doctor-specialty{
+  font-family: 'FontThree', sans-serif;
+  font-size: 14px;
+  color: #B3B3C1;
+  text-align: left;
+
+}
+
+.doctor-location{
+  font-family: 'FontThree', sans-serif;
+  font-size: 13px;
+  color: #B3B3C1;
+  text-align: left;
+
+}
+
+/* Responsive Doctors Section */
+@media (max-width: 768px) {
+  .doctor-card {
+    width: 180px;
+  }
+
+  .doctor-card img {
+    height: 240px;
+  }
+}
+
+/* Consultation Section */
+.consultation-section {
+  background: #ffffff;
+  color: #333;
+  position: relative;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.consultation-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.consultation-content {
+  position: relative;
+  max-width: 1800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 140px 40px;
+  background-color: #FFE5DC;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* ✅ Background SVG inside content */
+.consultation-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* stays behind text */
+}
+
+.consultation-bg-img {
+  width: 99%;
+  height: 100%;
+  object-fit: cover;  /* cover the whole box */
+}
+
+/* Content above background */
+.consultation-title,
+.consultation-description,
+.consultation-cta {
+  position: relative;
+  z-index: 1;
+}
+
+.consultation-title {
+  font-family: 'FontTwo', sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #1F1048;
+}
+
+.consultation-title .highlight {
+  color: #ff814c;
+  display: block;
+}
+
+.consultation-description {
+  font-family: 'FontThree', sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.6;
+  color: #252525;
+  margin-bottom: 32px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.consultation-cta {
+  margin-top: 32px;
+}
+
+.consultation-button {
+  background: #1F1048;
+  color: white;
+  padding: 18px 36px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'FontTwo', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(31, 16, 72, 0.2);
+}
+
+.consultation-button:hover {
+  background: #2a1a62;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(31, 16, 72, 0.3);
+}
+
+.button-arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.consultation-button:hover .button-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .consultation-section {
+    padding: 80px 20px;
+  }
+
+  .consultation-content {
+    padding: 40px 20px;
+  }
+
+  .consultation-title {
+    font-size: clamp(28px, 8vw, 42px);
+  }
+
+  .consultation-button {
+    padding: 16px 28px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .consultation-section {
+    padding: 60px 15px;
+  }
+
+  .consultation-description {
+    font-size: 16px;
+  }
+
+  .consultation-button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+
+/* --- Skin Health Section  --- */
+.skin-health-section {
+  padding: 110px 40px;
+  background: #ffffff; 
+}
+
+.skin-health-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Left column  */
+.skin-health-left {
+  flex: 0 0 55%;
+  min-width: 320px;
+}
+
+/* Right column (image) */
+.skin-health-right {
+  flex: 0 0 42%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Header */
+.skin-health-header {
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.skin-health-header h2 {
+  font-family: 'FontTwo', sans-serif;
+  font-size: clamp(36px, 6vw, 56px);
+  color: #35316F;
+  line-height: 1.03;
+  margin: 0 0 8px 0;
+}
+
+.skin-health-subtitle {
+  font-family: 'FontTwo', sans-serif;
+  color: #ff814c;
+  font-size: clamp(16px, 2.2vw, 32px);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Steps list layout - numbers + thin orange bar */
+.steps-list {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* each step: small orange vertical bar + number + text */
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+}
+
+/* small vertical bar to the far left (matches screenshot) */
+.step-item::before {
+  content: '';
+  width: 2px;
+  height: 36px;
+  background: #ff814c;
+  border-radius: 3px;
+  flex: 0 0 auto;
+}
+
+/* number next to the bar */
+.step-number {
+  font-family: 'FontThree', sans-serif;
+  font-weight: 700;
+  color: #222;
+  min-width: 26px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* main step text */
+.step-text {
+  font-family: 'FontThree', sans-serif;
+  font-size: 18px;
+  color: #222;
+  line-height: 1;
+    font-weight: 700;
+
+}
+
+/* CTA */
+.steps-cta {
+  margin-top: 36px;
+}
+
+.waiting-list-btn {
+  background: #ff814c;
+  color: #fff;
+  border: none;
+  padding: 16px 44px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'FontTwo', sans-serif;
+  box-shadow: 0 8px 30px rgba(255,129,76,0.12);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.waiting-list-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(255,129,76,0.14);
+}
+
+/* right image */
+.skin-health-image {
+  display: block;
+  max-width: 100%;
+}
+
+.skin-health-image img {
+  width: 100%;
+  max-width: 560px; 
+  height: auto;
+  display: block;
+  border-radius: 18px;
+}
+
+/* responsive: stack columns & center */
+@media (max-width: 992px) {
+  .skin-health-container {
+    flex-direction: column-reverse;
+    gap: 28px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .skin-health-left,
+  .skin-health-right {
+    flex: 0 0 100%;
+  }
+
+  .skin-health-header {
+    text-align: center;
+  }
+
+  .steps-list {
+    gap: 18px;
+    margin-top: 18px;
+  }
+
+  .step-item::before {
+    display: none; 
+  }
+
+  .step-number {
+    display: block;
+    margin: 0 auto 6px;
+  }
+
+  .step-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .waiting-list-btn {
+    padding: 14px 32px;
+  }
+
+  .skin-health-image img {
+    max-width: 360px;
+    border-radius: 16px;
+  }
+}
+
+/* small phones */
+@media (max-width: 480px) {
+  .skin-health-header h2 {
+    font-size: clamp(28px, 8vw, 34px);
+  }
+
+  .step-text {
+    font-size: 16px;
+  }
+}
+
+
+/* Skin Profile Section */
+.skin-profile-section {
+  padding: 100px 20px;
+  background: #f7f7fc;
+  display: flex;
+  justify-content: center;
+}
+
+.skin-profile-container {
+  max-width: 1200px;
+  width: 100%;
+  background: #ede9fe; /* light lavender background */
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Shapes (SVGs) */
+.skin-profile-container::before,
+.skin-profile-container::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(155, 125, 255, 0.15);
+  z-index: 0;
+}
+
+.skin-profile-container::before {
+  top: -120px;
+  left: -120px;
+}
+
+.skin-profile-container::after {
+  bottom: -120px;
+  right: -120px;
+}
+
+/* Logo */
+.skin-profile-logo {
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.skin-profile-logo svg {
+  width: 80px;
+  height: 80px;
+}
+
+/* Title */
+.skin-profile-title {
+  font-family: 'FontTwo', sans-serif;
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: bold;
+  color: #2d1b69;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  line-height: 1.3;
+}
+
+/* Description */
+.skin-profile-description {
+  font-family: 'FontThree', sans-serif;
+  font-size: 16px;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* Button */
+.skin-profile-btn {
+  background: #4c1d95;
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.skin-profile-btn:hover {
+  background: #5b21b6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(76, 29, 149, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skin-profile-container {
+    padding: 40px 20px;
+  }
+
+  .skin-profile-title {
+    font-size: 24px;
+  }
+
+  .skin-profile-btn {
+    width: 100%;
+    max-width: 280px;
   }
 }

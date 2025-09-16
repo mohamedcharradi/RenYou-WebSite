@@ -1,0 +1,159 @@
+/* FeaturesSection.css */
+.features-section {
+  padding: 100px 20px;
+}
+
+.features-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.features-title {
+  font-family: 'FontTwo', sans-serif;
+  font-size: clamp(32px, 4vw, 60px);
+  font-weight: bold;
+  text-align: center;
+  color: #1F1048;
+  margin-bottom: 60px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Header with icon and titles */
+.feature-header {
+  display: flex;
+  align-items: center; /* center icon and text vertically */
+  gap: 15px;
+}
+
+.feature-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #F6F7FF;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.feature-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Container for title and subtitle */
+.feature-titles {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* stack title & subtitle */
+  gap: 4px; /* space between title and subtitle */
+  justify-content: center; /* center vertically with icon */
+}
+
+.feature-title {
+  font-family: 'FontTwo', sans-serif;
+  font-size: 18px;
+  color: #1F1048;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.feature-subtitle {
+  font-family: 'FontTwo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff814c;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.feature-description {
+  font-family: 'FontThree', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .features-section {
+    padding: 80px 20px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    padding: 25px 20px;
+  }
+  
+  .feature-header {
+    gap: 12px;
+  }
+  
+  .feature-icon-container {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .feature-icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .feature-title {
+    font-size: 16px;
+  }
+  
+  .feature-subtitle {
+    font-size: 13px;
+  }
+  
+  .feature-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-section {
+    padding: 60px 15px;
+  }
+  
+  .features-title {
+    margin-bottom: 40px;
+  }
+  
+  .feature-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .feature-icon-container {
+    margin-bottom: 5px;
+  }
+}

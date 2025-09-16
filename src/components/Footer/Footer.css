@@ -1,0 +1,135 @@
+/* components/Footer.css */
+.footer {
+  background: linear-gradient(135deg, #2c2f4a, #3a3a4f);
+  color: #fff;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Logo and Brand Name */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.logo-shape {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6b46c1, #b83280);
+  border-radius: 50%;
+}
+
+/* Brand Name */
+.brand-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Contact Info */
+.contact-info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.contact-info p {
+  margin: 0.3rem 0;
+}
+
+/* Divider */
+.divider {
+  width: 80%;
+  height: 1px;
+  background: #fff;
+  margin: 1.5rem 0;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-heading {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input-field {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.send-button {
+  background-color: #6b46c1;
+  border: none;
+  padding: 0 1rem;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-button:hover {
+  background-color: #5a3bbf;
+}
+
+.question-textarea {
+  width: 100%;
+  height: 80px;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: none;
+  resize: vertical;
+  font-size: 1rem;
+  outline: none;
+  margin-top: 1rem;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Copyright */
+.copyright {
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #ccc;
+}
