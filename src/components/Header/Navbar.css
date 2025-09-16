@@ -27,19 +27,18 @@ body {
   align-items: center;
 
   /* Glassmorphism background */
-  background: rgba(26, 11, 61, 0.35); /* make it more transparent */
+  background: rgba(26, 11, 61, 0.35); 
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Safari support */
-
+  -webkit-backdrop-filter: blur(12px); 
   border-radius: 60px;               
-  border: 1px solid rgba(255, 255, 255, 0.2); /* softer border */
+  border: 1px solid rgba(255, 255, 255, 0.2); 
   box-sizing: border-box;      
   flex-wrap: wrap;
   gap:0px;
 
   /* Fixed position centered */
   position: fixed; 
-  top: 24px;                  
+  top: 26px;                  
   left: 50%;                  
   transform: translateX(-50%); 
   width: 88%;                 
@@ -65,15 +64,14 @@ body {
   display: flex;
   list-style: none;
   gap: clamp(20px, 3vw, 44px);
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-links a {
   text-decoration: none;
   color: white;
   font-family: 'FontTwo', sans-serif;
-  font-weight: bold;
   font-size: clamp(16px, 2vw, 20px);
   transition: color 0.3s, font-size 0.3s;
 }
@@ -113,7 +111,6 @@ body {
 
   .btn-primary {
     width: 100%;
-    margin-top: 10px;
   }
 }
 
@@ -147,13 +144,12 @@ body {
 @media (max-width: 480px) {
   .navbar {
     border: 0.5px solid rgba(255, 255, 255, 0.2);
-    border-radius: 24px;
+    border-radius: 22px;
     flex-direction: column;
     align-items: center;
-    padding: 12px 16px; 
+    justify-content: center;
     gap: 0px; 
   }
-
 
   .logo-img {
     height: clamp(25px, 8vw, 40px);
@@ -161,7 +157,7 @@ body {
 
   .nav-links {
     gap: 12px; 
-    justify-content: center;
+
   }
 
   .nav-links a {

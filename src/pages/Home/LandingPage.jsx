@@ -1,7 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
 import HeroImage from "../../assets/images/img.png";
-import bgSVG from"../../assets/images/bg.svg";
 
 // Import expert images statically
 import DrBayouFeriel from "../../assets/images/DrBayouFeriel.png";
@@ -15,6 +14,9 @@ import SkinProfileSection from "./Section/SkinProfileSection";
 import FeaturesSection from "./Section/FeaturesSection";
 import SkinPodcast from "./Section/PodcastGallery";
 import Footer from "../../components/Footer/Footer";
+import ConsultationSection from "../../components/Consultation/ConsultationSection";
+import TestimonialsSection from "../../components/Testimonials/TestimonialsSection";
+import PartnersSection from "../../components/Partners/PartnersSection";
 
 export default function LandingPage() {
   const experts = [
@@ -46,6 +48,7 @@ export default function LandingPage() {
       <div className="background-gradient">
         {/* Hero Section */}
         <section className="hero">
+          
           <div className="hero-text">
             <h1>
               Where AI Meets <br /> Human Expertise..
@@ -168,34 +171,7 @@ export default function LandingPage() {
       </section>
 
       {/* Consultation Section */}
-      {/* Consultation Section */}
-<section className="consultation-section">
-  <div className="consultation-container">
-    <div className="consultation-content">
-      
-      {/* Background image inside content */}
-      <div className="consultation-bg">
-        <img src={bgSVG} alt="Background" className="consultation-bg-img" />
-      </div>
-
-      <h2 className="consultation-title">
-        Book Your Free<br />
-        <span className="highlight">15-Min Consultation</span>
-      </h2>
-
-      <p className="consultation-description">
-        Talk to a certified skincare expert online for free. In just 15 minutes,
-        get personalized advice and answers tailored to your skin's needs.
-      </p>
-
-      <div className="consultation-cta">
-        <button className="consultation-button">
-          <span className="button-text">Book now via Calendly</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+<ConsultationSection/>
 
 
       {/* Skin Health Section */}
@@ -233,6 +209,10 @@ export default function LandingPage() {
        <FeaturesSection />
       {/* Podcast Section */}
       <SkinPodcast />
+    {/* {/*Testimonials*/}
+      <TestimonialsSection/>
+      {/*Partners Section */}
+       <PartnersSection /> 
       {/*footer*/}
       <Footer/>
     </div>

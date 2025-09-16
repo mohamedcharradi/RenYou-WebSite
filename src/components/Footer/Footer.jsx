@@ -1,62 +1,63 @@
-// components/Footer.jsx
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
+import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
+import { IoIosSend } from "react-icons/io";
+
+// logos you mentioned
+import Logo from "../../assets/logos/Full color Logo HR.png";
+import LogoWhite from "../../assets/logos/LogoWhite.svg";
+import Send from "../../assets/icons/send.svg";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      {/* Logo and Brand Name */}
-      <div className="logo-section">
-        <div className="logo">
-          {/* You can replace this with an actual logo image if available */}
-          <div className="logo-shape"></div>
+    <footer className="footer-section">
+      <div className="footer-inner">
+        <div className="footer-columns">
+          {/* LEFT column */}
+          <div className="footer-left">
+            <div className="logo-row">
+              <img src={Logo} alt="Full logo" className="full-logo" />
+              {/* If you want the word Renyou next to it, uncomment below */}
+              {/* <span className="brand-text">Renyou</span> */}
+            </div>
+
+            <div className="contact-info">
+              <div className="info-line">Adresse: Nabeul, Tunisia</div>
+              <div className="info-line">+216 55 373 686</div>
+              <div className="info-line">contact.renyouapp.com</div>
+            </div>
+
+           
+          </div>
+
+          {/* RIGHT column */}
+          <div className="footer-right">
+            <h3 className="contact-title">Contact Us</h3>
+            <div className="email-row">
+              <input className="email-input" type="email" placeholder="Mail" />
+              <button className="send-btn" aria-label="send">
+                <img src={Send} alt="small white logo" className="svg" />
+              </button>
+            </div>
+            <textarea className="message-area" placeholder="Type your question here" />
+          </div>
         </div>
-        <h1 className="brand-name">Renyou</h1>
-      </div>
 
-      {/* Contact Info */}
-      <div className="contact-info">
-        <p><strong>Adresse:</strong> Nabeul, Tunisia</p>
-        <p>+216 55 373 586</p>
-        <p>contact.renyousnp.com</p>
-      </div>
-
-      {/* Divider */}
-      <div className="divider"></div>
-
-      {/* Contact Us Form */}
-      <div className="contact-form-section">
-        <h2 className="contact-heading">Contact Us</h2>
-        <div className="contact-form">
-          <input type="text" placeholder="Mail" className="input-field" />
-          <button className="send-button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="white"
-              viewBox="0 0 24 24"
-            >
-              <path d="M4 12v-2l8-5v3h4v4h-4v3l-8-5z" />
-            </svg>
-          </button>
-        </div>
-        <textarea placeholder="Type your question here" className="question-textarea"></textarea>
-      </div>
-
-      {/* Divider */}
-      <div className="divider"></div>
-
-      {/* Social Media Icons (as text) */}
-      <div className="social-icons">
-        <span>In</span>
-        <span>f</span>
-        <span>@</span>
-      </div>
-
-      {/* Copyright */}
-      <div className="copyright">
-        <p>© 2025 Sianphilosophy. All rights reserved</p>
+        {/* bottom */}
+     <div className="footer-bottom">
+       <div className="divider" />
+         <div className="bottom-row">
+            <div className="bottom-left">
+              <a className="social-btn" href="#"><FaLinkedinIn /></a>
+              <a className="social-btn" href="#"><FaFacebookF /></a>
+              <a className="social-btn" href="#"><FaInstagram /></a>
+          </div>
+          <div className="bottom-center">
+            <img src={LogoWhite} alt="small white logo" className="small-logo" />
+          </div>    
+        <div className="copyright">© 2025 Skinphilosophy. All rights reserved </div>
+  </div>
+</div>
       </div>
     </footer>
   );
