@@ -1,6 +1,8 @@
 import React from "react";
 import "./WaitingListModal.css";
 import CloseIcon from "../../assets/icons/close.png";
+
+
 export default function WaitingListModal({ isOpen, onClose }) {
   if (!isOpen) return null; 
 

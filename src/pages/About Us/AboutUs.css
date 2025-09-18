@@ -117,11 +117,10 @@ body {
 }
 .mission-title {
     font-family: 'FontTwo', Arial, sans-serif;
-    font-size: clamp(32px, 2.2vw, 62px);
+    font-size: clamp(22px, 2vw, 62px);
     font-weight: bold;
     color: #ff814c;
     margin-bottom: 24px;
-    max-width: 100px;
 }
 
 .mission-description {

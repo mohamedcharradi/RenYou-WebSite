@@ -34,13 +34,27 @@
 }
 
 .modal-content {
-  background: #E7E5FF;
+  background: #E7E5FF url('../../assets/images/modalBg.svg') no-repeat center;
+  background-size: cover;
   padding: 40px;
   border-radius: 22px;
   width: 1000px;
   height: 500px;
   position: relative;
+  
 }
+
+.modal-bg-svg {
+  position: absolute;
+  top: 0; 
+  right: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.9; 
+  pointer-events: none; 
+}
+
+
 .modal-content h2{
 font-family: "FontTwo";
   color: #35316F;
@@ -57,6 +71,7 @@ font-family: "FontTwo";
 }
 
 .modal-content input {
+  font-family: "ABeeZee";
   padding: 10px;
   width: 70%;
   height: 30px;
@@ -66,8 +81,10 @@ font-family: "FontTwo";
 }
 
 .modal-content-button {
+  font-family: "FontTwo";
+
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 999px;
   border: none;
   background: #4b449f;
   color: white;
@@ -87,9 +104,11 @@ font-family: "FontTwo";
   cursor: pointer;
   background-color: transparent;
 }
+.close-btn:hover {
+box-shadow: #4E4E5F;
+}
 
-.close-btn img {
-    
+.close-btn img {   
   width: 36px; 
   height: 36px;
 }
