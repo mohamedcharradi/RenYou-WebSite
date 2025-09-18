@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css"; 
 import Logo from "../../assets/logos/Full color Logo HR.png";
 
-export default function Navbar() {
+export default function Navbar({ onOpenModal }) {
   return (
     <nav className="navbar">
       {/* Logo */}
@@ -13,14 +13,24 @@ export default function Navbar() {
 
       {/* Navigation links */}
       <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/doctors">Our doctors</Link></li>
-        <li><Link to="/podcast">Podcast</Link></li>
-        <li><Link to="/about">About us</Link></li>
+        <li>
+          <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/doctors" className={({ isActive }) => isActive ? "active" : ""}>Our doctors</NavLink>
+        </li>
+        <li>
+          <NavLink to="/podcasts" className={({ isActive }) => isActive ? "active" : ""}>Podcast</NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About us</NavLink>
+        </li>
       </ul>
 
-      {/* Primary button */}
-      <button className="btn-primary">Join the Waiting List</button>
+      {/* Primary button triggers modal */}
+      <button className="btn-primary" onClick={onOpenModal}>
+        Join the Waiting List
+      </button>
     </nav>
   );
 }

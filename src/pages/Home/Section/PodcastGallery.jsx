@@ -11,14 +11,18 @@ import doctorImage from "../../../assets/images/DrWafaImage.svg";
 import logoImage from "../../../assets/logos/SkinPodcast.svg";
 
 const SkinPodcast = () => {
-  // Generate full-screen audio wave bars
-  const generateWaveBars = () => {
-    return [...Array(200)].map((_, i) => {
-      const height = 40 + Math.sin(i * 0.08) * 60 + Math.cos(i * 0.12) * 40 + Math.random() * 80;
-      const delay = i * 0.015;
-      return { height, delay };
-    });
-  };
+ const generateWaveBars = () => {
+  const bars = [];
+  const totalBars = 200;
+  for (let i = 0; i < totalBars; i++) {
+    const distanceFromCenter = Math.abs(i - totalBars / 2);
+    const height = 20 + Math.sin(i * 0.08) * 60 + Math.cos(i * 0.12) * 40 + Math.random() * 50;
+    // reduce height near the center to fade behind doctor
+    const adjustedHeight = height * (distanceFromCenter / (totalBars / 2));
+    bars.push({ height: adjustedHeight, delay: i * 0.015 });
+  }
+  return bars;
+};
 
   const waveBars = generateWaveBars();
 

@@ -20,6 +20,7 @@ body {
   color: white;
   margin: 0;
   padding: 0;
+      background: linear-gradient(to bottom, #FFFFFF 0%, #E7E5FF 100%);
 }
 
 /* Background gradient with image and higher transparency */
@@ -182,7 +183,6 @@ body {
 /* Experts Section */
 .experts-section {
   padding: 80px 20px;
-  background: #ffffff;
   color: #333;
   margin-top: 20px;
 }
@@ -423,11 +423,10 @@ font-family: 'FontThree', sans-serif;
 /* --- Skin Health Section  --- */
 .skin-health-section {
   padding: 110px 40px;
-  background: #ffffff; 
 }
 
 .skin-health-container {
-  max-width: 1800px;
+  max-width: 1600px;
   margin: 0 auto;
   display: flex;
   gap: 48px;

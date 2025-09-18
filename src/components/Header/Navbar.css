@@ -45,6 +45,12 @@ body {
   z-index: 1000;
   transition: all 0.3s;
 }
+
+.nav-links a.active {
+  color: #ff814c; /* orange for the active page */
+  font-weight: bold; /* optional */
+}
+
 /* Logo */
 .logo {
   display: flex;

@@ -1,6 +1,8 @@
-import React from "react";
+import React ,{ useState } from "react";
 import "./LandingPage.css";
 import HeroImage from "../../assets/images/img.png";
+import { useNavigate } from "react-router-dom"; 
+
 
 // Import expert images statically
 import DrBayouFeriel from "../../assets/images/DrBayouFeriel.png";
@@ -17,8 +19,12 @@ import Footer from "../../components/Footer/Footer";
 import ConsultationSection from "../../components/Consultation/ConsultationSection";
 import TestimonialsSection from "../../components/Testimonials/TestimonialsSection";
 import PartnersSection from "../../components/Partners/PartnersSection";
+import WaitingListModal from "../../modal/WaitingListModal/WaitingListModal";
 
 export default function LandingPage() {
+    const navigate = useNavigate(); 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  
   const experts = [
     { src: DrBayouFeriel, alt: "Expert 1" },
     { src: DrDjebariKhaoula, alt: "Expert 2" },
@@ -61,8 +67,8 @@ export default function LandingPage() {
               skincare easier than ever.
             </p>
             <div className="buttons">
-              <button className="btn-primary">Pre-register Today</button>
-              <button className="btn-outline">Consult our doctors</button>
+              <button className="btn-primary" onClick={() => setIsModalOpen(true)}>Pre-register Today</button>
+              <button className="btn-outline" onClick={() => navigate("/doctors")}>Consult our doctors</button>
             </div>
           </div>
           <div className="hero-images">
@@ -173,7 +179,6 @@ export default function LandingPage() {
       {/* Consultation Section */}
 <ConsultationSection/>
 
-
       {/* Skin Health Section */}
       <section className="skin-health-section">
         <div className="skin-health-container">
@@ -192,7 +197,7 @@ export default function LandingPage() {
             </div>
 
             <div className="steps-cta">
-              <button className="waiting-list-btn">Join the Waiting List</button>
+              <button className="waiting-list-btn" onClick={() => setIsModalOpen(true)}>Join the Waiting List</button>
             </div>
           </div>
 
@@ -203,6 +208,10 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+       <WaitingListModal 
+              isOpen={isModalOpen} 
+              onClose={() => setIsModalOpen(false)} 
+            />
       {/* Skin Profile Section */}
       <SkinProfileSection />
       {/* Features Section */}

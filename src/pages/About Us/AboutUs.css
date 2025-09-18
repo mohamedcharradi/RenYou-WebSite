@@ -1,0 +1,324 @@
+/* Import custom fonts */
+@font-face {
+  font-family: 'FontTwo';
+  src: url('../../assets/fonts/ITC Avant Garde Gothic Std Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontThree';
+  src: url('../../assets/fonts/ITC Avant Garde Gothic Std Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+      background: linear-gradient(to bottom, #FFFFFF 0%, #E7E5FF 100%);
+}
+/* Global reset */
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: white;
+    max-width: 1800px;
+    height: 500px;
+    margin: 16px auto;
+    border-radius: 24px;
+    overflow: hidden;
+
+    background-color: #E7E5FF;
+    display: flex;
+    justify-content: center; /* center vertically */
+    align-items: center;     /* center horizontally */
+    padding: 20px; 
+    flex-direction: column;
+}
+
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: url('../../assets/images/BgPodcast.svg') center/cover no-repeat;
+    opacity: 0.3; 
+    z-index: 0;
+}
+
+.hero-section ::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.content-wrapper {
+    margin-top: 200px;
+    position: relative;
+    z-index: 2;
+    padding: 20px 50px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    font-family: "FontTwo";
+}
+
+.host-info {
+    font-family: "FontTwo";
+    font-size: 72px; 
+    font-weight: bold;       
+    color: #35316F;        
+    text-align: center;     
+    margin: 0;               
+}
+
+/* Info Section */
+.info-section {
+    max-width: 1700px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.info-content {
+    text-align: left;
+    padding-top: 80px;
+}
+.info-title {
+    font-family: 'FontTwo', Arial, sans-serif;
+    font-size: clamp(44px, 2.2vw, 72px);
+    font-weight: bold;
+    color: #35316F;
+    max-width: 1400px;
+}
+
+.info-description {
+    font-family: 'FontThree', Arial, sans-serif;
+    font-size: 16px;
+    font-size: clamp(14px, 2.2vw, 16px);
+    line-height: 1.6;
+    color: #2E2E38;
+    max-width: 1200px;
+}
+
+/* mission Section */
+.mission-section {
+    max-width: 600px;
+    padding: 0 20px;
+    margin-left: 40px;
+}
+.mission-content {
+    text-align: left;
+}
+.mission-title {
+    font-family: 'FontTwo', Arial, sans-serif;
+    font-size: clamp(32px, 2.2vw, 62px);
+    font-weight: bold;
+    color: #ff814c;
+    margin-bottom: 24px;
+    max-width: 100px;
+}
+
+.mission-description {
+    font-family: 'FontThree', Arial, sans-serif;
+    font-size: clamp(14px, 2.2vw, 16px);
+    line-height: 1.6;
+    color: #2E2E38;
+    max-width: 600px;
+}
+/* Episodes Section */
+.episodes-section {
+  max-width: 1700px;
+  margin: 100px auto;
+  padding: 40px 20px;
+  border-radius: 20px;
+}
+
+.episodes-title {
+  font-family: 'FontTwo', Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #2A1B3D;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.episodes-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #7B68B8;
+  border-radius: 2px;
+}
+
+/* Scrollable list */
+.episodes-scroll {
+  overflow-x: auto;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;      
+  padding-bottom: 16px;
+}
+
+.episodes-scroll::-webkit-scrollbar {
+    display: none; 
+}
+
+.episodes-list {
+    justify-content: center;
+    align-items: center;
+  display: flex;
+  gap: 24px;
+}
+
+/* Each episode card */
+.episode-card {
+  width: 370;
+  border-radius: 0px auto;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+}
+
+.episode-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.episode-image-wrapper {
+  width: 370;
+  height: 200px;
+  overflow: hidden;
+}
+
+.episode-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Founder Section */
+.founders-section {
+  position: relative; 
+  background-color: #d5d2fd; 
+  padding: 60px 20px;
+  border-radius: 24px;
+  margin: 40px auto;
+  max-width: 1500px;
+  height: 700px;
+  text-align: center;
+  overflow: hidden; 
+}
+
+.founders-section::after {
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: url('../../assets/images/BgfullLogowhite.svg') center/cover no-repeat;
+  z-index: 0;
+}
+
+.founders-section::before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.founders-title {
+  font-size: clamp(36px, 2vw, 56px);
+  font-family: "FontTwo";
+  color: #2d2765;
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+  z-index: 2; 
+}
+
+.founders-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;      
+  gap: 100px;               
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+
+}
+
+.founder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.founder-image {
+  width: 350px;       
+  height: 350px;
+  border-radius: 50%;
+  background-color: white; 
+  margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+
+.founder-name {
+  font-size: 24px;  
+  font-family: "FontTwo";
+  color: #2d2765;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.founder-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.founder-socials a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #b6b2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2d2765;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.founder-socials a:hover {
+  background-color: #d3d1f1;
+}
+
+
+
+@media (max-width: 480px) {
+.mission-section {
+    margin-left: 0px;
+}
+.founder-image {
+  width: 150px;       
+  height: 150px;
+}
+.founders-section {
+height: auto; 
+  margin: 0 20px;
+  
+}
+
+
+}
+
