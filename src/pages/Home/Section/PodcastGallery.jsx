@@ -62,15 +62,15 @@ const SkinPodcast = () => {
       </div>
 
       {/* Doctor Section */}
-      <div className="doctor-section text-center">
-        <img src={doctorImage} alt="Dr. Wafa Cheberli" className="doctor-img" />
-        <div className="host-text">Hosted by</div>
-        <h2 className="doctor-name">Dr. Wafa Cheberli</h2>
-        <p className="doctor-title">Doctor of Pharmacy and Entrepreneur</p>
+      <div className="doctor-section-podcast text-center">
+        <img src={doctorImage} alt="Dr. Wafa Cheberli" className="doctor-img-podcast" />
+        <div className="host-text-podcast">Hosted by</div>
+        <h2 className="doctor-name-podcast">Dr. Wafa Cheberli</h2>
+        <p className="doctor-title-podcast">Doctor of Pharmacy and Entrepreneur</p>
       </div>
 
       {/* Episodes Section */}
-      <div className="episodes-section">
+      <div className="episodes-section-podcast">
         <div className="episodes-scroll">
           <div className="episodes-list">
             {episodes.map((episode) => (

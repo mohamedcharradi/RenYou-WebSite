@@ -6,6 +6,7 @@ import Podcast from "./pages/Podcast/Podcasts";
 import AboutUs from "./pages/About Us/AboutUs";
 import Navbar from "./components/Header/Navbar";
 import WaitingListModal from "./modal/WaitingListModal/WaitingListModal";
+import DoctorDetails from "./pages/Our Doctor/DoctorDetails";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,10 +20,10 @@ function App() {
         onClose={() => setIsModalOpen(false)}
       />
 
-      {/* Routes */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/doctors" element={<OurDoctors />} />
+        <Route path="/doctors/:id" element={<DoctorDetails />} />
         <Route path="/podcasts" element={<Podcast />} />
         <Route path="/about" element={<AboutUs />} />
       </Routes>

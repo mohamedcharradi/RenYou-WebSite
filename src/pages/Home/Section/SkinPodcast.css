@@ -99,31 +99,31 @@
 }
 
 /* --- Doctor Section --- */
-.doctor-section {
+.doctor-section-podcast {
   position: relative;
   z-index: 10;
   text-align: center;
   padding: 20px;
 }
 
-.doctor-img {
+.doctor-img-podcast {
   object-fit: cover;
-  border-radius: 16px;
   margin: 0 auto;
+  width: 400px;
 }
 
-.host-text {
+.host-text-podcast {
   color: #ffffff;
   font-size: 14px;
   margin-top: -50px;
 }
 
-.doctor-name {
+.doctor-name-podcast {
   font-size: clamp(32px, 2vw, 48px);
   margin-bottom: 4px;
 }
 
-.doctor-title {
+.doctor-title-podcast {
   color: #ffffff;
   font-size: clamp(16px, 3vw, 32px);
   font-family: 'FontThree';
