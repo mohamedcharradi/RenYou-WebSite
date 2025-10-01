@@ -63,14 +63,12 @@ body {
 }
 
 .hero-text h1 {
-  font-size: clamp(32px, 5vw, 60px);
-  font-weight: bold;
+  font-size: clamp(32px, 10vw, 60px);
   line-height: 1.2;
 }
 
 .hero-text h2 {
-  font-size: clamp(20px, 3vw, 36px);
-  font-weight: bold;
+  font-size: clamp(20px, 4vw, 36px);
   color: #ff814c;
 }
 
@@ -96,7 +94,7 @@ body {
 }
 
 .hero-images img {
-  width: 80%;
+  width: 90%;
   height: auto;
   object-fit: contain;   
   flex-shrink: 0;     
@@ -328,6 +326,11 @@ body {
     height: 800px;
   }
 }
+@media (max-width: 768px) {
+  .vertical-scrolling-gallery {
+    display: none;
+  }
+}
 
 @media (max-width: 600px) {
   .experts-section {
@@ -349,8 +352,6 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 100px;
-
-
 }
 
 .doctors-container {

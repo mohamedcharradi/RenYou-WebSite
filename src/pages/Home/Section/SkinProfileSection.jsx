@@ -1,11 +1,15 @@
-import React from "react";
+import React ,{useState}from "react";
 import "./SkinProfileSection.css";
 
 // Import SVGs
 import BackgroundSvg from "../../../assets/images/Bg.svg";
 import LogoSvg from "../../../assets/logos/logo quize.svg";
+import QuizModal from "../../../modal/QuizModal/QuizModal";
 
 export default function SkinProfileSection() {
+
+   const [openModal, setOpenModal] = useState(false);
+
   return (
     <section className="skin-profile-section">
       <img src={BackgroundSvg} alt="Background design" className="skin-profile-bg" />
@@ -24,8 +28,9 @@ export default function SkinProfileSection() {
           Our AI will analyze your answers and provide personalized advice designed just for you.
         </p>
 
-        <button className="skin-profile-btn">Start the Quiz</button>
+        <button className="skin-profile-btn" onClick={() => setOpenModal(true)}>Start the Quiz</button>
       </div>
+      {openModal && <QuizModal onClose={() => setOpenModal(false)} />}
     </section>
   );
 }

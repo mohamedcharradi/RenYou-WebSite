@@ -176,8 +176,12 @@ export default function LandingPage() {
         </div>
       </section>
 
+
+
       {/* Consultation Section */}
-<ConsultationSection/>
+        <ConsultationSection/>
+
+
 
       {/* Skin Health Section */}
       <section className="skin-health-section">

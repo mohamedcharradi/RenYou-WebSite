@@ -5,7 +5,7 @@
 
 .partners-section h2 {
   font-family: 'FontTwo', sans-serif;
-  font-size: clamp(28px, 5vw, 56px);
+  font-size: clamp(44px, 3vw, 60px);
   margin-bottom: 40px;
   color: #2d1b69;
 }

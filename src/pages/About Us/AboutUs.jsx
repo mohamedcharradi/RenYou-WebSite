@@ -93,7 +93,7 @@ export default function AboutUs() {
   <h2 className="founders-title">Meet the Founders</h2>
   <div className="founders-container">
     <div className="founder-card">
-      <div className="founder-image"></div> {/* Replace with actual image */}
+      <div className="founder-image"></div> 
       <h3 className="founder-name">Kholoud ABADA</h3>
       <div className="founder-socials">
         <a href="#"><FaLinkedinIn /></a>
@@ -102,7 +102,7 @@ export default function AboutUs() {
       </div>
     </div>
     <div className="founder-card">
-      <div className="founder-image"></div> {/* Replace with actual image */}
+      <div className="founder-image"></div> 
       <h3 className="founder-name">Dr. Wafa Cheberli</h3>
       <div className="founder-socials">
         <a href="#"><FaLinkedinIn /></a>

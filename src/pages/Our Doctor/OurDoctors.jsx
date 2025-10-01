@@ -134,8 +134,8 @@ export default function OurDoctors() {
             <div
               className="doctor-card"
               key={index}
-              onClick={() => navigate(`/doctors/${doctor.id}`)} // ✅ navigate on click
-              style={{ cursor: "pointer" }} // pointer cursor for UX
+              onClick={() => navigate(`/doctors/${doctor.id}`)} 
+              style={{ cursor: "pointer" }} 
             >
               <img src={doctor.src} alt={doctor.alt} className="doctor-img" />
               <div className="doctor-info-main">
