@@ -1,6 +1,6 @@
 import React from "react";
 import "./ConsultationSection.css"; 
-import bgSVG from "../../assets/images/bg.svg"; 
+//import bgSVG from "../../assets/images/bg.svg"; 
 
 export default function ConsultationSection() {
   return (
@@ -8,11 +8,7 @@ export default function ConsultationSection() {
       <div className="consultation-container">
         <div className="consultation-content">
 
-          {/* Background image */}
-          <div className="consultation-bg">
-            <img src={bgSVG} alt="Background" className="consultation-bg-img" />
-          </div>
-
+     
           <h2 className="consultation-title">
             Book Your Free<br />
             <span className="highlight">15-Min Consultation</span>
