@@ -1,14 +1,15 @@
-import React ,{useState}from "react";
+import React, { useState } from "react";
 import "./SkinProfileSection.css";
 
 // Import SVGs
 import BackgroundSvg from "../../../assets/images/Bg.svg";
 import LogoSvg from "../../../assets/logos/logo quize.svg";
-import QuizModal from "../../../modal/QuizModal/QuizModal";
+
+// Import Quiz Wrapper
+import QuizWrapper from "../../../modal/QuizModal/QuizWrapper";
 
 export default function SkinProfileSection() {
-
-   const [openModal, setOpenModal] = useState(false);
+  const [openQuiz, setOpenQuiz] = useState(false);
 
   return (
     <section className="skin-profile-section">
@@ -28,9 +29,13 @@ export default function SkinProfileSection() {
           Our AI will analyze your answers and provide personalized advice designed just for you.
         </p>
 
-        <button className="skin-profile-btn" onClick={() => setOpenModal(true)}>Start the Quiz</button>
+        <button className="skin-profile-btn" onClick={() => setOpenQuiz(true)}>
+          Start the Quiz
+        </button>
       </div>
-      {openModal && <QuizModal onClose={() => setOpenModal(false)} />}
+
+      {/* Render QuizWrapper when openQuiz is true */}
+      {openQuiz && <QuizWrapper />}
     </section>
   );
 }

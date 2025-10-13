@@ -1,140 +1,111 @@
-/* Overlay */
-.modal-overlay {
+@font-face {
+  font-family: 'FontTwo';
+  src: url('../../assets/fonts/ITC Avant Garde Gothic Std Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontThree';
+  src: url('../../assets/fonts/ITC Avant Garde Gothic Std Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ABeeZee';
+  src: url('../../assets/fonts/ABeeZee-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.modal-overlay-quize {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(2px);
   z-index: 1000;
 }
 
-/* Modal box with same colors and fixed height */
-.modal-content {
+/* Main modal box */
+.modal-content-quize-welcome {
+  background: linear-gradient(135deg, #eeecff 0%, #e7e5ff 100%);
+  border-radius: 16px;
+  padding: 48px 64px;
   position: relative;
-  background: #E7E5FF; 
-  padding: 40px;
-  border-radius: 22px;
   width: 90%;
-  max-width: 1000px; /* same as original max-width */
-  height: 500px;      /* same as original */
-  box-sizing: border-box;
-  overflow-y: auto;
+  max-width: 900px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
-/* Background image */
-.modal-content::before {
+/* Decorative background shapes */
+.modal-content-quize-welcome::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('../../assets/images/modalBg.svg') no-repeat center;
+  background: url("../../assets/images/modalBg.svg") no-repeat center;
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.2;
   z-index: 0;
 }
 
-.modal-content > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Titles */
-.modal-content h2 {
-  font-family: "FontTwo";
-  color: #35316F;
-  font-size: clamp(32px, 4vw, 72px); 
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-/* Description */
-.modal-content p {
-  font-family: "ABeeZee";
-  text-align: left;
-  font-size: clamp(16px, 2.5vw, 16px); 
-  color: #4E4E5F;
-  max-width: 600px;
-  margin-bottom: 30px;
-}
-
-/* Input + button wrapper */
-.modal-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: 100%;
-}
-
-/* Input */
-.modal-content input {
-  font-family: "ABeeZee";
-  padding: 10px;
-  flex: 1 1 200px;
-  min-width: 150px;
-  height: 50px;
-  border-radius: 8px;
-  border: 1px solid #e6e6e6;
-  box-sizing: border-box;
-}
-
-/* Button */
-.modal-content-button {
-  font-family: "FontTwo";
-  flex: 0 0 30%;
-  min-width: 120px;
-  height: 50px;
-  border-radius: 8px;
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
   border: none;
-  background: #4b449f;
+  font-size: 24px;
+  color: #292773;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Text container */
+.quiz-text {
+  position: relative;
+  z-index: 1; 
+}
+
+/* Heading */
+.quiz-text h2 {
+  color: #FF7F50;
+  font-size: 80px;
+  line-height: 1.2;
+  margin-bottom: 22px;
+  font-family: "FontTwo";
+}
+
+/* Paragraph */
+.quiz-text p {
+  color: #202020;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 62px;
+  font-family: "ABeeZee";
+}
+
+/* Start button */
+.start-quiz-button {
+  background: #35316F;
   color: white;
+  font-family: "FontThree";
+  font-weight: 600;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 32px;
+  font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.modal-content-button:hover {
-  background: #3a3580;
-}
-
-/* Close button */
-.close-btn {
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: transparent;
-}
-
-.close-btn img {   
-  width: 36px; 
-  height: 36px;
-}
-
-/* Make modal content responsive for small screens */
-@media (max-width: 768px) {
-  .modal-content {
-    height: auto; 
-    padding: 20px;
-  }
-  
-  .modal-content h2 {
-    font-size: clamp(24px, 6vw, 48px);
-  }
-  
-  .modal-content p {
-    font-size: clamp(14px, 4vw, 16px);
-  }
-  
-  .modal-content input, .modal-content-button {
-    flex: 1 1 100%;
-    width: 100%;
-  }
-  
-  .modal-content-button {
-    height: 45px;
-  }
+.start-quiz-button:hover {
+  background: #4338ca;
 }

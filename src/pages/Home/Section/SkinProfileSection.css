@@ -6,7 +6,7 @@
   justify-content: center;
   background: #E7E5FF;
   max-width: 1800px;
-  margin: 0px 20px;
+  margin: 0px auto;
   border-radius: 20px;
  
 
@@ -42,7 +42,7 @@
 /* Title */
 .skin-profile-title {
   font-family: 'FontTwo', sans-serif;
-  font-size: clamp(28px, 1vw, 56px);
+  font-size: clamp(28px, 3vw, 56px);
   font-weight: bold;
   color: #2d1b69;
   line-height: 1.3;

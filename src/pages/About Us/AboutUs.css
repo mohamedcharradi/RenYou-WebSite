@@ -15,6 +15,17 @@
 body {
       background: linear-gradient(to bottom, #FFFFFF 0%, #E7E5FF 100%);
 }
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Global reset */
 .hero-section {
     position: relative;
